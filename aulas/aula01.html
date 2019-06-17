@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <h1 v-if="usuario.id == 1">  </h1>
-        id: {{ usuario.id }}, <br>
-        name: {{ usuario.name}}, <br>
-        profissao: {{ usuario.profissao }}
+        <h1> {{ titulo }} </h1>
+        <ul>
+            <li v-for="(item, index) in linguagens"> {{ index }} - {{ item.name }} </li>
+        </ul>
     </div>
 </body>
 
@@ -22,11 +22,13 @@
         el: "#app",
         data: {
             titulo: "New title",
-            usuario: {
-                id: 1,
-                name: "Daniel",
-                profissao: "Ator",
-            }
+            linguagens: [
+                { name: "PHP" },
+                { name: "Java"},
+                { name: "Python"},
+                { name: "C"},
+                { name: "ASP"} 
+            ]
         }
     });
 </script>
